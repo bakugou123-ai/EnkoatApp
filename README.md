@@ -1,3 +1,4 @@
+## Project Summary
 This project is a full-stack application  that simulates a contractor-facing interface for submitting project quotes and visualizing project performance data. 
 
 The contractor can : 
@@ -29,6 +30,7 @@ python manage.py migrate
 python manage.py create_mock_data  # Optional custom command (1000+ entries)
 
 ### 5. Start server
+
 Django server
 python manage.py runserver
 
