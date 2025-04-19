@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roofing Quote Portal</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="hero-header">
+    <h1 >ROOFING QUOTE SUBMISSION</h1>
+    <p class="subtitle">Submit quotes or explore insights — fast, clean, beautiful.</p>    
+</div>
+    
+    <div class="grid-container">
+        <div class="card faded-card">
+            <img src="{% static 'icons/exam.png' %}" alt="Form Icon" class="card-icon">
+            <h2>Submit a Quote</h2>
+            <p>Enter a new project</p>
+            <a href="/app/form/" class="action-btn">Go to Form</a>
+        </div>
+    <div class="card faded-card">
+        <img src="{% static 'icons/dashboard.png' %}" alt="Form Icon" class="card-icon">
+    <h2>View Analytics</h2>    
+    <p>Explore submitted quotes across the country.</p>
+    <a href="/app/dashboard/" class="action-btn">View Dashboard</a>  
+</div>
+   
+    </div>
+    </div>
+</body>
+</html>

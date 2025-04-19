@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Roofing Quote Report</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+      color: #222;
+    }
+
+    h2, h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      margin: 6px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 10px;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    img {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Roofing Quote Report</h2>
+  <p><strong>Total Projects:</strong> {{ total_projects }}</p>
+  <p><strong>Average Roof Size:</strong> {{ avg_roof_size }} sq ft</p>
+
+  <h3>Most Common Roof Type by State</h3>
+  <table>
+    <tr>
+      <th>State</th>
+      <th>Most Used Roof Type</th>
+    </tr>
+    {% for state, roof in roof_summary.items %}
+    <tr>
+      <td>{{ state }}</td>
+      <td>{{ roof }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h3>Visualizations</h3>
+
+  <img src="{{ static_path }}reports/p1_projects_by_state.png" alt="Projects by State">
+  <img src="{{ static_path }}reports/p2_avg_roof_size.png" alt="Average Roof Size">
+  <img src="{{ static_path }}reports/p3_monthly_trend.png" alt="Monthly Project Trend">
+
+</body>
+</html>

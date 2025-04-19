@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Submit a Roofing Quote</title>
+</head>
+<body>
+   
+    <div class="form-wrapper">
+        <img src="{% static 'icons/exam.png' %}" alt="Form Icon" class="card-icon">
+        <h1>Submit a Roofing Quote</h1>
+    <form id="quoteForm">
+       
+        <input type="text" name="contractor_name" placeholder="Enter Contractor Name" required><br>
+      
+        <input type="text" name="company_name" placeholder=" Enter Company Name" required><br>
+       
+        <input type="number" name="roof_size" placeholder="Enter Roof Size (sqft)" required><br>
+       
+        <select name="roof_type" placeholder ="Select Roof Type"required>
+            <option value="">Select Roof Type</option>
+            <option value="Metal">Metal</option>
+            <option value="TPO">TPO</option>
+            <option value="Foam">Foam</option>
+            <option value="Shingle">Shingle</option>
+            <option value="Other">Other</option>
+        </select><br>
+        
+        <input type="text" name="project_city" placeholder="Enter City name" required><br>
+        <input type="text" name="project_state" placeholder="Enter State (e.g., AZ)" required><br>
+        <label for="project_date" class="proj-date">Enter Project Date</label>
+        <input type="date" name="project_date" placeholder="Select Project Date"><br>
+
+
+        <button type="submit" class="action-btn">Submit Quote</button>
+    </form>
+    </div>
+
+    <script>
+        document.getElementById('quoteForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = new FormData(this);
+            const data = Object.fromEntries(form.entries());
+
+            const response = await fetch('/app/submit/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                alert('Quote submitted successfully!');
+                window.location.href="/"
+            } else {
+                alert('Submission failed!');
+            }
+        });
+    </script>
+</body>
+</html>
