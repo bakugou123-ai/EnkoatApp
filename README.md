@@ -40,9 +40,12 @@ python -m bokeh serve bokeh_dashboard.py --allow-websocket-origin=localhost:5006
 ## Improvements:
 With extended time, I would've added the following features:
 1. User authentication
-2. PDF report generation of data
-3. Data filteration
-4. Heat map showing the roof type with respect to each state.
+2. FAQ Page
+3. Email service showing the data the user has submitted
+4. PDF report generation of data
+5. Data filteration
+6. Heat map showing the roof type with respect to each state.
+7. Tabluar form of data representation with state-wise filter
 
 
 
