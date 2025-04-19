@@ -19,7 +19,7 @@ git clone https://github.com/bakugou123-ai/EnkoatApp.git
 ### 2. Setup Environment 
 python -m venv venv
 venv\Scripts\activate  # Windows
-# or
+or
 source venv/bin/activate  # Mac/Linux
 
 ### 3.Install requirements
@@ -31,13 +31,13 @@ python manage.py create_mock_data  # Optional custom command (1000+ entries)
 
 ### 5. Start server
 
-Django server
+### Django server
 python manage.py runserver
 
-Bokeh dashboard server
+### Bokeh dashboard server
 python -m bokeh serve bokeh_dashboard.py --allow-websocket-origin=localhost:5006 --allow-websocket-origin=127.0.0.1:8000
 
-Improvements:
+## Improvements:
 With extended time, I would've added the following features:
 1. User authentication
 2. PDF report generation of data
