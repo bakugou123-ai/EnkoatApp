@@ -29,10 +29,10 @@ python manage.py migrate
 python manage.py create_mock_data  # Optional custom command (1000+ entries)
 
 ### 5. Start server
-# Terminal 1: Django server
+Django server
 python manage.py runserver
 
-# Terminal 2: Bokeh dashboard server
+Bokeh dashboard server
 python -m bokeh serve bokeh_dashboard.py --allow-websocket-origin=localhost:5006 --allow-websocket-origin=127.0.0.1:8000
 
 Improvements:
